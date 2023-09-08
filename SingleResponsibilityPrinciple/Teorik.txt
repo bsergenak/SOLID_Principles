@@ -1,0 +1,19 @@
+﻿
+
+Single Responsibility Principle
+
+Bu ilke, uygulamada kullanılan sınıfların,
+modüllerin yada methodların sadece bir sorumluluğu olması gerektiğini söylemektedir.
+Yani sınıf yada method'du değiştirmek için sadebe bir nedenim.
+Ne demek istedik, var olan methodum üzserinden değişiklik yapmak için sadece bir görevi olmalıdır. Burada anlatılmak istenilen bir sınıfın modifikasyona mümkün mertebe kapatılmasıdır. Yani sınıf üzerinde habire değişiklik yapmamalıyız. Bir sınıf üzerinde fazla iş yüklendiyse bu işlerde değişiklik yapmak istediğimde sınıfta modifikasyona neden olacağım demektir. Böylelikle bu prensibe ters düşeceğim. Şayet sınıfım sadece bir iş yüklemiş olsaydım,
+sınıf üzerinden bir değişiklik yapmak için sadece bir nedenim olacaktı ve bu prensibe uymuş olacaktık.
+
+Bu ilkenin lab çalışmasında BadExample klasörünün altında,
+işe yeni giren bir çalışanın, özlük bilgilerinin veri tabanına kayıt edilmesi,
+bu işlem ile ilgili durumlara göre notification verilmesi ve logların tutulması,
+mail atılması vb. gibi işlemleri tek bir sınıf içeriisnde yazarsak bu prensibe aykırı hareket etmiş oluruz.
+
+Çünkü bir sınıfa birden fazla iş yüklemiş oluyorum.
+
+GoodExample klasörü altında tüm bu business'ları parçalara ayırarak hareket edeceğiz.
+Yani Kişinin özlük bilgisini ekleyecek bir sınıf, logları kaydetmek için bir sınıf gibi.

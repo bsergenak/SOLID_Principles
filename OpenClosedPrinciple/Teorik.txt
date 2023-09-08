@@ -1,0 +1,12 @@
+﻿
+
+Open & Close Principle
+
+Bu ilkede, uygulama içerisinde var olan sınıflarımızda herhangi bir değişiklik yapmadana bu değişikliği getirmemizi ister yani var olan sınıfımızda bulunan kodlara müdahale etmeden değişiklik yapmamızı bizden talep eder. Bu prensibin bizden istediği sınıflarımızda var olan methodları değişime kapamamız, bunun yanında da yeniliklere açık olmasıdır. Bunun nedeni ise var olan kodlar üzerinde değişiklik yapmak bizler için çok maliyetli olacağından, var olan kodlara dokunmadan değişikliği yerine getirmiş oluruz.
+
+Bu lab çalışmasında bir kahve dükkanımız olacak, bu kahve dükkanımızda hali hazırda satılan kahve türleri bulunmaktadır. Dükkan sahibi yeni bir kahve türü satmak istediğinde yeni kahve var olan kahvelere eklenecek yani bir modifikasyon yapılacak. 
+Beklentimiz yeni kahve türleri geldiğininde var olan sisteme dokunmadan değişiklik yapmadan hızlı ve çevik bir şekilde bu değişikliği yerine getirelim. Harcanan süre = Maaliyet!
+
+BadExample'da kahve türleri için bir Coffee.cs enumu oluşturucağız. CoffeeShop.cs içerisine masalarda içilen kahve türlerine göre masa hesabı hesaplanacak. Lakin yeni bir kahve türü geldiğinde hem enum olan Coffee.cs hemde CoffeeShop.cs sınfılarımda bulunan yapılarda değişiklik yapmaya mecbur kalacağım. Yeni bir kahve türü geldiğinde masa tutarını hesaplayan methoduma her seferinde değişiklik yapmak zorunda kalacağım. Tüm bu değişiklikler yüzünden bu prensibe ters düşmüş olacağım.
+
+GoodExample'da CoffeeShop.cs sınıfımı soyutlamalara bağlayacağım. Böylelikle kural koyarak sınıfımı değişime kapamış olacağım. Ayrıca her bir kahve için ayrı ayrı sınıflar açacağım, böylelikle yeni bir kahve türü geldiğinde yeni bir sınıf açarak yoluma devam edeceğim. Böylelikle ne modelde nede masa tutarını hesaplayan methodumda bir değişiklik yapmış olmayacağım ve OCP'ye uymuş olacağım.

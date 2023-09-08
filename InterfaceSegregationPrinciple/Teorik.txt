@@ -1,0 +1,10 @@
+﻿
+
+Interface Segregation Principle
+
+Bu prensibi ortaya atan arkadaş, alt sınıfların üst sınıflardan gerekesin yetenekleri kalıtımyoluyla almamasını istiyor. Bir başka değişle herhangi bir concrete bir sınıf kendisiyle ilgisi olmayan interface'lerden yetenek almamalıdır. Bu ilkeyi SRP ve LSP ile birlilte düşünmekte fayda vardır. 
+Bu prensip şişman interface'lerden hoşlanmaz. Yetenekler ile şişirilmiş bir arayüz(interface) alt sınıflarının gereksiz bir çok yetenek almasına sebebiyet ver.r Böylelikle bu prensibe ters düşmüş oluruz.
+
+Bu prensibin lab çalışmasında, BadExample içerisinde yazacağımız örnekte bir IBird.cs ata sınıfı oluşturacağız. Bu ata sınıf Fly() ve Walk() yeteneklerini içerecektir. Bu ata sınıftan kalıtım alacak Hawk.cs ve Chicken.cs sınıfları olduğunu düşünelim. Hawk.cs'in aldığı yetenekleri karşılakmaktadır. Çünkü Hawk hem uçabilir hem yürüyebilir. Lakin, Chicken kazandığı yetenkleri karşılayamamaktadır. Yani tavuk yürüyebilir lakin kanatları olmasına rağmen uçamaz. Böylelikle tavuk kazandığı gereksiz yetenkler ile bu prensibe ters düşmüştür.
+
+GoodExample örneğinde ise, kötü senaryoyu düzelteceğiz ve ISP'yi uygulayacağız. Yapmanız gerekn şey ise çok basittir. Alt sınıfların ihtiyaçlarına göre arayüzlerimizi yani ata sınıflarımızı baştan dizayn edeceğiz. Yani Uçabilir kuşlar için bir arayüz, yüzebilir kuşlar için bir başka arayüz kullanacağız.

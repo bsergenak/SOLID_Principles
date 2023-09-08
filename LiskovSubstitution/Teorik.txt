@@ -1,0 +1,10 @@
+﻿
+
+Liskov Substitution Principle
+
+Bu ilke bize, türetilmiş sınıfların ata sınıflarıyla yer değiştirilebilir olmasını söylemektedir. Bir başka deyişle ata sınıfların herhangi biri alt sınıfın yerine geçebilir şekilde dizayn edilmelidir.
+Örnek vermek gerekirse bir gemi kaptanı ve oğlunu düşünelin, gemi kaptanının gemiyi sevk ve idare edebilmesi için bazı yeteneklere sahip olması gerekmektedir. Bu gemi kaptanının oğlu kaptan olacaksa bu yetenkleri kazanması gerekir ve LSP bu senaryoya uygundur. Lakin oğlu boksör olmak istiyorsa kaptanlık görevini icra ederken kullanacağı yeteneklere ihtiyacıı olmayacktır, böylelikle ilk senaryodaki ata sınıf ile alt sınıf arasındaki yetenklerin geçişkenliği kırılmış ve LSP ilkesine uyulmamaış olunur.
+
+Bu ilkenin klasik örneklerinden bir diğeri ise dikdörtgen ve kare geometrik şekillerini düşünelim. Dikdörtgen geometrik olarak uzun ve kısa kenarları bulunan bir şekildir. Kare geometrik olarak eşit kenarlara sahiptir. Şimdi dikdörtgenden kalıtım alan bir kare sınıfı düşünwelin, bu senaryoda yine bu prensibe aykırı etmiş oluyoruz. Çünkü dikdörtgenin alan ve çevre hesabıyla kareninkiler farklıdır!!
+
+Yukarıdaki senaryoda LSP uymak istediğimizde dikdörtgen ve kare için ortak ata sınıf hazılarannarak ortak özellikler ve yetenekler barındırılmalıdır. Böylelikle ata ile alt sınıf arasındaki geçişkenlik sağlanmış olur ve LSP'ye uyulur.

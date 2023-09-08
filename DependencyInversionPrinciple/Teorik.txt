@@ -1,0 +1,14 @@
+﻿
+
+Dependency Inversion Principle (Bağımlılığı Tersine Çevirme)
+
+Bu ilkenin ana fikri, alt yada üst seviyeli sınıfların seviyesine bakılmaksızın soyutlamalara bağlı olmasını gerektiğini söylemektedir. Bu ilkede ki temel amaç sınıflar arasınıdaki bağımlılığı kırmak ve loose couple gevşek bağlı sınıflar oluşturmak. Çünkü tight couple sınıflar projelerimizi extend etmemiz yada ölçeklendirmemiz için önümüzdeki engellerden biridir.
+
+Somut bir örnek vermek gerekirse, kumanda ile kumanda pili arasındaki ilişkiyi düşünelim. Uzaktan kumandanın çalışması için pile ihtiyaç vardır, ancak pil markası ile kumandanın çalışması için bir alaka, bir ilişki yoktur. Yani istediğimiz herhangi bir pil markasını tercih ecebileceğimizden kumanda ile pil markası loose couple olmalıdır.
+
+Yazılımsal olarak düşünürsek, daha önceden yaptığımız LibraryProject'i burada örnek olarak verebiliriz. Çok doğru bir şekilde olmasada ilk adım olarak repository'lerimizde bir arayüzden kalıtım alarak ilk adımı atmış olduk. Somut düşünürsek IBaseRepository.cs'den GenreRepository.cs soyutlayarak ilk adımı atmış olduk. GenrePage.cs sınıfına gittiğimizde GenreReposirtory.cs new'ledik, böylece GenrePage.cs ile GenreRepository.cs sınıflarını birbirlerine sıkı sıkıya bağladık. Birbirlerine reference vermesini sağladık. Böylelikle her iki concrte sınıftan birinde değişiklik yaptığımda yapılan değişiklil sıkı sıkıya bağlı olan sınıflarıda etkiler durumda olacaktır.
+
+Library Project'te DIP uymak istediğimizde gerek yapı, GenreRepository.cs sınıfını GenrePage.cs içerisinde new'lemek yerine IGenreRepositoru.cs arayüzünün DI ile inject etmeliyim, böylelikle bağımlılığı kırmış, loose couple yapmış oldur.
+
+Junior Developer'lar tarafından DIP ve DI hep birbirine karıştırılır. DIP bir prensiptir, DI (Dependency Injection) ise bir design pattern'dır. 
+DI, DIP yada IoC prensiplerini uygulamak için bir araçtır, yoldur, usuldur.
